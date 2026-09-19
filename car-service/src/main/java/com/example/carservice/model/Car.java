@@ -1,17 +1,18 @@
-package com.example.userservice.model;
+package com.example.carservice.model;
 
-import com.example.userservice.Enum.CarCondition;
-import com.example.userservice.Enum.FuelType;
-import com.example.userservice.Enum.Transmition;
+import com.example.carservice.Enum.CarCondition;
+import com.example.carservice.Enum.FuelType;
+import com.example.carservice.Enum.Transmition;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
 @Data
-public class User {
+public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -42,5 +43,7 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private FuelType fuelType ;
+
+    private LocalDateTime createdAt ;
 
 }
