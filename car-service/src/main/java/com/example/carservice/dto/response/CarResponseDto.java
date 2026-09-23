@@ -2,7 +2,7 @@ package com.example.carservice.dto.response;
 
 import com.example.carservice.Enum.CarCondition;
 import com.example.carservice.Enum.FuelType;
-import com.example.carservice.Enum.Transmition;
+import com.example.carservice.Enum.Transmission;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,7 +34,7 @@ public class CarResponseDto {
 
     private CarCondition carCondition ;
 
-    private Transmition transmition ;
+    private Transmission transmission ;
 
     private FuelType fuelType ;
 

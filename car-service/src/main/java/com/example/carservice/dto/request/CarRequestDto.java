@@ -3,7 +3,7 @@ package com.example.carservice.dto.request;
 
 import com.example.carservice.Enum.CarCondition;
 import com.example.carservice.Enum.FuelType;
-import com.example.carservice.Enum.Transmition;
+import com.example.carservice.Enum.Transmission;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -48,7 +48,7 @@ public class CarRequestDto {
     private CarCondition carCondition ;
 
     @NotNull
-    private Transmition transmition ;
+    private Transmission transmission ;
 
     @NotNull
     private FuelType fuelType ;

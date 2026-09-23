@@ -2,7 +2,7 @@ package com.example.carservice.model;
 
 import com.example.carservice.Enum.CarCondition;
 import com.example.carservice.Enum.FuelType;
-import com.example.carservice.Enum.Transmition;
+import com.example.carservice.Enum.Transmission;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -10,8 +10,9 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity
+
 @Data
+@Entity
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -21,6 +22,7 @@ public class Car {
 
     private String model ;
 
+    @Column(name = "car_year")
     private Integer year ;
 
     private  Integer mileAge ;
@@ -31,7 +33,7 @@ public class Car {
 
     private BigDecimal price ;
 
-    private String Color ;
+    private String color ;
 
     private String description ;
 
@@ -39,7 +41,7 @@ public class Car {
     private CarCondition carCondition ;
 
     @Enumerated(EnumType.STRING)
-    private Transmition transmition ;
+    private Transmission transmission ;
 
     @Enumerated(EnumType.STRING)
     private FuelType fuelType ;

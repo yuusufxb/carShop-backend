@@ -18,7 +18,7 @@ public class CarMapper {
         car.setModel(carRequestDto.getModel());
         car.setName(carRequestDto.getName());
         car.setSeats(carRequestDto.getSeats());
-        car.setTransmition(carRequestDto.getTransmition());
+        car.setTransmission((carRequestDto.getTransmission()));
         return car;
     }
     public static CarResponseDto carToDto(Car car){
@@ -35,7 +35,7 @@ public class CarMapper {
         carResponseDto.setModel(car.getModel());
         carResponseDto.setName(car.getName());
         carResponseDto.setSeats(car.getSeats());
-        carResponseDto.setTransmition(car.getTransmition());
+        carResponseDto.setTransmission((car.getTransmission()));
         return carResponseDto;
     }
 }

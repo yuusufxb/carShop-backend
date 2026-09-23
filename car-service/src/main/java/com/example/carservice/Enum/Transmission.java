@@ -1,6 +1,6 @@
 package com.example.carservice.Enum;
 
-public enum Transmition {
+public enum Transmission {
     MANUAL ,
     AUTOMATIC
 }

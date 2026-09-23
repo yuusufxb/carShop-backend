@@ -1,9 +1,9 @@
 package com.example.carservice.Enum;
 
 public enum FuelType {
-    PERTOL ,
+    PETROL ,
     DIESEL ,
     HYBRID ,
-    ELECTIC
+    ELECTRIC
 
 }
