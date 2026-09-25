@@ -24,4 +24,5 @@ public class CarService {
             List<Car> cars = carRepository.findAll() ;
             return cars.stream().map(car -> CarMapper.carToDto(car)).toList();
     }
+
 }
