@@ -28,4 +28,5 @@ public class CarController {
         List<CarResponseDto> cars = carService.getCar();
         return ResponseEntity.ok(cars);
     }
+    
 }

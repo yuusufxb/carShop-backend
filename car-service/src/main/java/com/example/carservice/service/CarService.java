@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CarService {
@@ -16,13 +17,28 @@ public class CarService {
     public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
     }
+
     public CarResponseDto createCar(CarRequestDto carRequestDto){
         Car createdCar = carRepository.save(CarMapper.dtoToCar(carRequestDto));
         return CarMapper.carToDto(createdCar);
     }
-        public List<CarResponseDto> getCar(){
+
+    public List<CarResponseDto> getCar(){
             List<Car> cars = carRepository.findAll() ;
             return cars.stream().map(car -> CarMapper.carToDto(car)).toList();
     }
 
+    public CarResponseDto getCarById(UUID id){
+        Car car = carRepository.findById(id).orElseThrow(()-> new RuntimeException("Car not found!")) ;
+        return CarMapper.carToDto(car);
+    }
+
+    public CarResponseDto updateCar(CarRequestDto carRequestDto){
+        Car updatedCar = carRepository.save(CarMapper.dtoToCar(carRequestDto));
+        return CarMapper.carToDto(updatedCar);
+    }
+    public void deleteCarById(UUID id){
+        carRepository.findById(id).orElseThrow(()-> new RuntimeException("Car not found!")) ;
+        carRepository.deleteById(id);
+    }
 }
