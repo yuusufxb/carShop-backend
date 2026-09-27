@@ -38,4 +38,19 @@ public class CarMapper {
         carResponseDto.setTransmission((car.getTransmission()));
         return carResponseDto;
     }
+    public static Car updateCar(CarRequestDto carRequestDto , Car car){
+        car.setCarCondition(carRequestDto.getCarCondition());
+        car.setColor(carRequestDto.getColor());
+        car.setPrice(carRequestDto.getPrice());
+        car.setDoors(carRequestDto.getDoors());
+        car.setFuelType(carRequestDto.getFuelType());
+        car.setYear(carRequestDto.getYear());
+        car.setDescription(carRequestDto.getDescription());
+        car.setMileAge(carRequestDto.getMileAge());
+        car.setModel(carRequestDto.getModel());
+        car.setName(carRequestDto.getName());
+        car.setSeats(carRequestDto.getSeats());
+        car.setTransmission((carRequestDto.getTransmission()));
+        return  car ;
+    }
 }

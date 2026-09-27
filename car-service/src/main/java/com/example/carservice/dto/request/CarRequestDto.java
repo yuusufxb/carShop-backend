@@ -39,7 +39,7 @@ public class CarRequestDto {
     private BigDecimal price ;
 
     @NotBlank(message = "color is required")
-    private String Color ;
+    private String color ;
 
     @Length(max = 150)
     private String description ;

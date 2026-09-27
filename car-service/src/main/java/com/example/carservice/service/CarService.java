@@ -33,9 +33,11 @@ public class CarService {
         return CarMapper.carToDto(car);
     }
 
-    public CarResponseDto updateCar(CarRequestDto carRequestDto){
-        Car updatedCar = carRepository.save(CarMapper.dtoToCar(carRequestDto));
-        return CarMapper.carToDto(updatedCar);
+    public CarResponseDto updateCar(CarRequestDto carRequestDto , UUID id){
+        Car oldCar = carRepository.findById(id).orElseThrow(()-> new RuntimeException("Car not found!")) ;
+        Car newCar = CarMapper.updateCar(carRequestDto, oldCar);
+        carRepository.save(newCar) ;
+        return CarMapper.carToDto(newCar) ;
     }
     public void deleteCarById(UUID id){
         carRepository.findById(id).orElseThrow(()-> new RuntimeException("Car not found!")) ;

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
@@ -28,5 +29,19 @@ public class CarController {
         List<CarResponseDto> cars = carService.getCar();
         return ResponseEntity.ok(cars);
     }
-    
+    @GetMapping("/{id}")
+    public ResponseEntity<CarResponseDto> getCarById(@PathVariable UUID id){
+        CarResponseDto carResponseDto = carService.getCarById(id) ;
+        return ResponseEntity.ok(carResponseDto);
+    }
+    @PutMapping("{id}")
+    public ResponseEntity<CarResponseDto> updateCar(@RequestBody CarRequestDto carRequestDto , @PathVariable UUID id){
+        CarResponseDto carResponseDto = carService.updateCar(carRequestDto , id);
+        return ResponseEntity.ok(carResponseDto);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCarById(@PathVariable UUID id){
+        carService.deleteCarById(id);
+        return ResponseEntity.ok("Car deleted!") ;
+    }
 }
