@@ -1,7 +1,7 @@
 package com.example.carservice.model;
 
-import com.example.carservice.Enum.CarCondition;
 import com.example.carservice.Enum.FuelType;
+import com.example.carservice.Enum.Status;
 import com.example.carservice.Enum.Transmission;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -38,14 +38,15 @@ public class Car {
     private String description ;
 
     @Enumerated(EnumType.STRING)
-    private CarCondition carCondition ;
-
-    @Enumerated(EnumType.STRING)
     private Transmission transmission ;
 
     @Enumerated(EnumType.STRING)
     private FuelType fuelType ;
 
-    private LocalDateTime createdAt ;
+    @Enumerated(EnumType.STRING)
+    private Status carStatus ;
 
+    private String licensePlate ;
+
+    private LocalDateTime createdAt ;
 }

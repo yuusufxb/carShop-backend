@@ -9,9 +9,9 @@ INSERT INTO car (
     price,
     color,
     description,
-    car_condition,
     transmission,
     fuel_type,
+    license_plate,
     created_at
 ) VALUES
       (
@@ -25,9 +25,9 @@ INSERT INTO car (
           28500.00,
           'Black',
           'Well maintained BMW 3 Series with regular service history',
-          'USED',
           'AUTOMATIC',
           'PETROL',
+        '33-A-482719',
           CURRENT_TIMESTAMP
       ),
       (
@@ -41,9 +41,9 @@ INSERT INTO car (
           52000.00,
           'White',
           'Luxury SUV with leather interior and panoramic roof',
-          'USED',
           'AUTOMATIC',
           'DIESEL',
+            '12-B-905314',
           CURRENT_TIMESTAMP
       ),
       (
@@ -57,9 +57,9 @@ INSERT INTO car (
           32000.00,
           'Silver',
           'Excellent condition with full service history',
-          'USED',
           'AUTOMATIC',
           'PETROL',
+       '45-C-173826',
           CURRENT_TIMESTAMP
       ),
       (
@@ -73,9 +73,9 @@ INSERT INTO car (
           35000.00,
           'Blue',
           'Low mileage Audi A4 with modern interior',
-          'USED',
           'AUTOMATIC',
           'PETROL',
+       '67-D-841205',
           CURRENT_TIMESTAMP
       ),
       (
@@ -89,9 +89,9 @@ INSERT INTO car (
           16500.00,
           'Gray',
           'Reliable and economical city car',
-          'USED',
           'MANUAL',
           'DIESEL',
+       '21-E-639472',
           CURRENT_TIMESTAMP
       ),
       (
@@ -105,9 +105,9 @@ INSERT INTO car (
           24000.00,
           'White',
           'Low mileage and fuel efficient',
-          'USED',
           'AUTOMATIC',
           'HYBRID',
+       '89-F-254183',
           CURRENT_TIMESTAMP
       ),
       (
@@ -121,9 +121,9 @@ INSERT INTO car (
           12500.00,
           'Red',
           'Affordable and reliable daily driver',
-          'USED',
           'MANUAL',
           'PETROL',
+       '14-G-760591',
           CURRENT_TIMESTAMP
       ),
       (
@@ -137,9 +137,9 @@ INSERT INTO car (
           27000.00,
           'Dark Blue',
           'Comfortable family SUV with spacious interior',
-          'USED',
           'AUTOMATIC',
           'DIESEL',
+       '52-H-318647',
           CURRENT_TIMESTAMP
       ),
       (
@@ -153,9 +153,9 @@ INSERT INTO car (
           14500.00,
           'Orange',
           'Compact and economical car for city driving',
-          'USED',
           'MANUAL',
           'PETROL',
+    '76-J-492805',
           CURRENT_TIMESTAMP
       ),
       (
@@ -169,8 +169,8 @@ INSERT INTO car (
           41000.00,
           'Black',
           'Electric vehicle with low mileage',
-          'USED',
           'AUTOMATIC',
           'ELECTRIC',
+       '38-K-127934',
           CURRENT_TIMESTAMP
       );

@@ -1,6 +1,5 @@
 package com.example.carservice.dto.response;
 
-import com.example.carservice.Enum.CarCondition;
 import com.example.carservice.Enum.FuelType;
 import com.example.carservice.Enum.Transmission;
 import lombok.Getter;
@@ -32,9 +31,9 @@ public class CarResponseDto {
 
     private String description ;
 
-    private CarCondition carCondition ;
-
     private Transmission transmission ;
+
+    private String licensePlate ;
 
     private FuelType fuelType ;
 

@@ -7,7 +7,6 @@ import com.example.carservice.model.Car;
 public class CarMapper {
     public static Car dtoToCar(CarRequestDto carRequestDto){
         Car car = new Car();
-        car.setCarCondition(carRequestDto.getCarCondition());
         car.setColor(carRequestDto.getColor());
         car.setPrice(carRequestDto.getPrice());
         car.setDoors(carRequestDto.getDoors());
@@ -19,12 +18,12 @@ public class CarMapper {
         car.setName(carRequestDto.getName());
         car.setSeats(carRequestDto.getSeats());
         car.setTransmission((carRequestDto.getTransmission()));
+        car.setLicensePlate((carRequestDto.getLicensePlate()));
         return car;
     }
     public static CarResponseDto carToDto(Car car){
         CarResponseDto carResponseDto = new CarResponseDto();
         carResponseDto.setId(car.getId());
-        carResponseDto.setCarCondition(car.getCarCondition());
         carResponseDto.setColor(car.getColor());
         carResponseDto.setPrice(car.getPrice());
         carResponseDto.setDoors(car.getDoors());
@@ -36,21 +35,18 @@ public class CarMapper {
         carResponseDto.setName(car.getName());
         carResponseDto.setSeats(car.getSeats());
         carResponseDto.setTransmission((car.getTransmission()));
+        carResponseDto.setLicensePlate(car.getLicensePlate());
         return carResponseDto;
     }
     public static Car updateCar(CarRequestDto carRequestDto , Car car){
-        car.setCarCondition(carRequestDto.getCarCondition());
         car.setColor(carRequestDto.getColor());
         car.setPrice(carRequestDto.getPrice());
-        car.setDoors(carRequestDto.getDoors());
         car.setFuelType(carRequestDto.getFuelType());
         car.setYear(carRequestDto.getYear());
         car.setDescription(carRequestDto.getDescription());
         car.setMileAge(carRequestDto.getMileAge());
         car.setModel(carRequestDto.getModel());
         car.setName(carRequestDto.getName());
-        car.setSeats(carRequestDto.getSeats());
-        car.setTransmission((carRequestDto.getTransmission()));
         return  car ;
     }
 }

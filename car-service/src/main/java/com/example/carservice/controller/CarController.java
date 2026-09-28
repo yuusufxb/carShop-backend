@@ -5,6 +5,7 @@ import com.example.carservice.dto.response.CarResponseDto;
 import com.example.carservice.model.Car;
 import com.example.carservice.service.CarService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class CarController {
     }
 
     @PostMapping
-    public ResponseEntity<CarResponseDto> createCar(@RequestBody CarRequestDto carRequestDto){
+    public ResponseEntity<CarResponseDto> createCar(@RequestBody @Validated CarRequestDto carRequestDto){
         CarResponseDto carResponseDto = carService.createCar(carRequestDto);
         return ResponseEntity.ok(carResponseDto);
     }
@@ -35,7 +36,7 @@ public class CarController {
         return ResponseEntity.ok(carResponseDto);
     }
     @PutMapping("{id}")
-    public ResponseEntity<CarResponseDto> updateCar(@RequestBody CarRequestDto carRequestDto , @PathVariable UUID id){
+    public ResponseEntity<CarResponseDto> updateCar(@RequestBody @Validated CarRequestDto carRequestDto , @PathVariable UUID id){
         CarResponseDto carResponseDto = carService.updateCar(carRequestDto , id);
         return ResponseEntity.ok(carResponseDto);
     }

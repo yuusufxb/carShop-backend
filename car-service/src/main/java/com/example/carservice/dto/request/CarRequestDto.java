@@ -1,7 +1,6 @@
 package com.example.carservice.dto.request;
 
 
-import com.example.carservice.Enum.CarCondition;
 import com.example.carservice.Enum.FuelType;
 import com.example.carservice.Enum.Transmission;
 import jakarta.validation.constraints.*;
@@ -45,10 +44,11 @@ public class CarRequestDto {
     private String description ;
 
     @NotNull
-    private CarCondition carCondition ;
-
-    @NotNull
     private Transmission transmission ;
+
+    @Pattern(regexp = "^[0-9]{2}-[A-Z]-[0-9]{6}$")
+    @NotBlank(message = "license plate required")
+    private String licensePlate ;
 
     @NotNull
     private FuelType fuelType ;
